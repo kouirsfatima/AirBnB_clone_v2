@@ -138,7 +138,7 @@ class HBNBCommand(cmd.Cmd):
                             val = int(val)
                     except ValueError:
                         continue
-                setattr(new_instance, key, val)       
+                setattr(new_instance, key, val)
         print(new_instance.id)
         new_instance.save()
 
@@ -335,6 +335,7 @@ class HBNBCommand(cmd.Cmd):
         """ Help information for the update class """
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()

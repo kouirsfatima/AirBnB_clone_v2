@@ -7,10 +7,10 @@ from models.state import State
 from models.place import Place
 from models.review import Review
 from models.user import User
-
 from os import getenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
+
 
 class DBStorage:
     """database storage class"""
@@ -63,6 +63,6 @@ class DBStorage:
         """create all tables in the database and the current session"""
         Base.metadata.create_all(self.__engine)
         Session = scoped_session(
-            sessionmaker(bind=self.__engine, expire_on_commit = False)
+            sessionmaker(bind=self.__engine, expire_on_commit=False)
         )
         self.__session = Session()
