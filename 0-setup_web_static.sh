@@ -13,8 +13,7 @@ ln -sf /data/web_static/releases/test/ /data/web_static/current
 chown -R ubuntu:ubuntu /data/
 chgrp -R ubuntu /data/
 
-echo '
-server {
+server "{
     listen 80 default_server;
     listen [::]:80 default_server;
     add_header X-Served-By $HOSTNAME;
@@ -34,7 +33,6 @@ server {
     location = /404.html {
         internal;
     }
-}
-' > /etc/nginx/sites-available/default
+}" > /etc/nginx/sites-available/default
 
 service nginx restart
