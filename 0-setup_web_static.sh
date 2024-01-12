@@ -10,7 +10,6 @@ echo "Holberton School" > /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 chown -R ubuntu /data/
-chgrp -R ubuntu /data/
 
 printf %s "server {
     listen 80 default_server;
