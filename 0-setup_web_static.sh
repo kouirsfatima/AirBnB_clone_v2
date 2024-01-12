@@ -2,7 +2,7 @@
 
 apt-get -y update
 apt-get install -y nginx
- 
+
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared/
 
@@ -11,6 +11,7 @@ echo "Hello, world!" > /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 chown -R ubuntu:ubuntu /data/
+chgrp -R ubuntu /data/
 
 echo '
 server {
@@ -35,4 +36,5 @@ server {
     }
 }
 ' > /etc/nginx/sites-available/default
+
 service nginx restart
