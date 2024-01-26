@@ -19,7 +19,7 @@ def hbnb():
 
 @app.route('/c/<text>')
 def c_is_fun(text):
-    """print C followed by the value of the text variable"""
+    """print C"""
     return f'C {escape(text).replace("_", " ")}'
 
 if __name__ == '__main__':
