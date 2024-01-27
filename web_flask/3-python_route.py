@@ -23,9 +23,9 @@ def c_text(text):
     """Print 'C ' followed by the value of the text variable."""
     return 'C {}'.format(text.replace('_', ' '))
 
-
+@app.route('/python')
 @app.route('/python/<text>')
-def python_text(text):
+def python_text(text='is cool'):
     """Print 'Python ' followed by the value of the text variable."""
     return 'Python {}'.format(text.replace('_', ' '))
 
